@@ -30,6 +30,15 @@ using vi = vector<long long>;
 using vvi = vector<vector<long long>>;
 
 template<typename T>
+istream& operator>>(istream& o, vector<T> & a)
+{
+    for (size_t i = 0; i < a.size(); ++i){
+        o >> a[i];
+    }
+    return o;
+}
+
+template<typename T>
 ostream& operator<<(ostream& o, const vector<T> & a)
 {
     for (size_t i = 0; i < a.size(); ++i){
