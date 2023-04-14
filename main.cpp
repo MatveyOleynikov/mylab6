@@ -23,6 +23,12 @@ using namespace std;
 #define mini(a)    ( min_element(all(a)) - (a).begin())
 #define maxi(a)    ( max_element(all(a)) - (a).begin())
 
+using ll = long long;
+using ld = long double;
+using pii = pair<ll, ll>;
+using vi = vector<long long>;
+using vvi = vector<vector<long long>>;
+
 template<typename T>
 ostream& operator<<(ostream& o, const vector<T> & a)
 {
@@ -34,7 +40,7 @@ ostream& operator<<(ostream& o, const vector<T> & a)
 }
 
 int main(){
-    vector<vector<int>> vct = {{1, 2}, {3, 4}};
+    vvi vct = {{1, 2}, {3, 4}};
 
     int a = 5;
 
