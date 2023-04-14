@@ -1,4 +1,5 @@
 #include <iostream>
+#include <numeric>
 #include <vector>
 
 using namespace std;
@@ -14,6 +15,13 @@ using namespace std;
 #else
 #define dbg(...)
 #endif
+
+#define all(a)     a.begin(), a.end()
+#define sum(a)     ( accumulate (all(a), 0ll))
+#define mine(a)    (*min_element(all(a)))
+#define maxe(a)    (*max_element(all(a)))
+#define mini(a)    ( min_element(all(a)) - (a).begin())
+#define maxi(a)    ( max_element(all(a)) - (a).begin())
 
 template<typename T>
 ostream& operator<<(ostream& o, const vector<T> & a)
@@ -31,5 +39,6 @@ int main(){
     int a = 5;
 
     dbg(vct, a);
+    dbg(sum(vct[0]));
     return 0;
 }
