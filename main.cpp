@@ -9,27 +9,33 @@ using namespace std;
 #define dbg(x)
 #endif
 
-void printVector(const vector<int>& vec){
-    for (auto elem: vec){
-        cout << elem << " ";
+template<typename T>
+ostream& operator<<(ostream& o, const vector<T> & a)
+{
+    for (size_t i = 0; i < a.size(); ++i){
+        o << a[i] << " ";
     }
-    cout << "\n";
+    o << '\n';
+    return o;
 }
 
-void printVectorVector(const vector<vector<int>>& vecVec){
-    for (auto vec: vecVec){
-        for (auto elem: vec){
-            cout << elem << " ";
+template<typename T>
+ostream& operator<<(ostream& o, const vector<vector<T>> & a)
+{
+    for (size_t i = 0; i < a.size(); ++i){
+        for (size_t j = 0; j < a[i].size(); ++j){
+            o << a[i][j] << " ";
         }
-        cout << "\n";
+        o << "\n";
     }
-    cout << "\n";
+    o << '\n';
+    return o;
 }
 
 int main(){
     vector<vector<int>> vct = {{1, 2}, {3, 4}};
 
-    printVectorVector(vct);
+    dbg(vct);
 
     int a = 5;
 
