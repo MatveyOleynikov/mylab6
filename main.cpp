@@ -19,19 +19,6 @@ ostream& operator<<(ostream& o, const vector<T> & a)
     return o;
 }
 
-template<typename T>
-ostream& operator<<(ostream& o, const vector<vector<T>> & a)
-{
-    for (size_t i = 0; i < a.size(); ++i){
-        for (size_t j = 0; j < a[i].size(); ++j){
-            o << a[i][j] << " ";
-        }
-        o << "\n";
-    }
-    o << '\n';
-    return o;
-}
-
 int main(){
     vector<vector<int>> vct = {{1, 2}, {3, 4}};
 
