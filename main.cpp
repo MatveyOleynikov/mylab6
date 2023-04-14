@@ -48,11 +48,22 @@ ostream& operator<<(ostream& o, const vector<T> & a)
     return o;
 }
 
+vector<int> operator*(const vector<int>& a, const int b)
+{
+    vector<int> res = a;
+    for (size_t i = 0; i < res.size(); ++i){
+        res[i] *= b;
+    }
+
+    return res;
+}
+
 int main(){
     vvi vct = {{1, 2}, {3, 4}};
 
     int a = 5;
 
+    dbg(vct[0] * 3);
     dbg(vct, a);
     dbg(sum(vct[0]));
     return 0;
