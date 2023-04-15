@@ -26,6 +26,9 @@ void printVectorVector(const vector<vector<int>>& vecVec){
     cout << "\n";
 }
 
+struct tree{
+};
+
 int main(){
     vector<vector<int>> vct = {{1, 2}, {3, 4}};
 
