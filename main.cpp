@@ -25,6 +25,10 @@ ostream& operator<<(ostream& o, const vector<T> & a)
     return o;
 }
 
+struct undirectedGraph{
+};
+
+
 int main(){
     vector<vector<int>> vct = {{1, 2}, {3, 4}};
 
