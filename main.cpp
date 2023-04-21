@@ -73,6 +73,11 @@ struct directedGraph{
 
         return res;
     }
+
+    //common
+    int countNeighbours(int u) const{
+        return listAdjacency[u].size();
+    }
 };
 
 int main(){
