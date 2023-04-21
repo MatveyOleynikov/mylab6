@@ -27,6 +27,18 @@ void printVectorVector(const vector<vector<int>>& vecVec){
 }
 
 struct tree{
+    int n;
+    int m;
+    vector<vector<int>> listAdjacency;
+
+    tree(const int n, const int m, const vector<pair<int, int>>& edjes): n(n), m(m){
+        listAdjacency.resize(n);
+
+        for (int i = 0; i < m; ++i){
+            listAdjacency[edjes[i].first].push_back(edjes[i].second);
+            listAdjacency[edjes[i].second].push_back(edjes[i].first);
+        }
+    }
 };
 
 int main(){
