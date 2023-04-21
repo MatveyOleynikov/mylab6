@@ -26,6 +26,18 @@ ostream& operator<<(ostream& o, const vector<T> & a)
 }
 
 struct undirectedGraph{
+    int n;
+    int m;
+    vector<vector<int>> listAdjacency;
+
+    undirectedGraph(const int n, const int m, const vector<pair<int, int>>& edjes): n(n), m(m){
+        listAdjacency.resize(n);
+
+        for (int i = 0; i < m; ++i){
+            listAdjacency[edjes[i].first].push_back(edjes[i].second);
+            listAdjacency[edjes[i].second].push_back(edjes[i].first);
+        }
+    }
 };
 
 
