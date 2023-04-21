@@ -31,12 +31,33 @@ struct tree{
     int m;
     vector<vector<int>> listAdjacency;
 
+    //common
+    bool cycle(const int pred, const int cur, vector<bool>& visited) const{
+        if (visited[cur]){
+            return true;
+        }
+
+        visited[cur] = true;
+        bool res;
+
+        for (auto nxt: listAdjacency[cur]){
+            if (nxt != pred){
+                cycle(cur, nxt, visited);
+            }
+        }
+    }
+
     tree(const int n, const int m, const vector<pair<int, int>>& edjes): n(n), m(m){
         listAdjacency.resize(n);
 
         for (int i = 0; i < m; ++i){
             listAdjacency[edjes[i].first].push_back(edjes[i].second);
             listAdjacency[edjes[i].second].push_back(edjes[i].first);
+        }
+
+        vector<bool> visited;
+        if (cycle(0, -1, visited)){
+            exit(1);
         }
     }
 };
