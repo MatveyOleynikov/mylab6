@@ -38,6 +38,18 @@ struct undirectedGraph{
             listAdjacency[edjes[i].second].push_back(edjes[i].first);
         }
     }
+
+    //common
+    void dfs(int cur, vector<bool>& visited){
+        if (visited[cur]){
+            return;
+        }
+        visited[cur] = true;
+
+        for (auto nxt: listAdjacency[cur]){
+            dfs(nxt, visited);
+        }
+    }
 };
 
 
