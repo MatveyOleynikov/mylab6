@@ -47,6 +47,17 @@ struct tree{
         }
     }
 
+    //only for tree
+    void numberOfDescendants(int cur, int pred, vector<int>& numberDescandants){
+        numberDescandants[cur] = 1;
+        for (auto nxt: listAdjacency[cur]){
+            if (nxt != pred){
+                numberOfDescendants(nxt, cur, numberDescandants);
+                numberDescandants[cur] += numberDescandants[nxt];
+            }
+        }
+    }
+
     tree(const int n, const int m, const vector<pair<int, int>>& edjes): n(n), m(m){
         listAdjacency.resize(n);
 
