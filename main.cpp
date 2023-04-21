@@ -60,6 +60,19 @@ struct directedGraph{
             listAdjacency[edjes[i].first].push_back(edjes[i].second);
         }
     }
+
+    directedGraph backGraph() const{
+        vector<pair<int, int>> edjes;
+        for (int u = 0; u < n; ++u){
+            for (auto v: listAdjacency[u]){
+                edjes.push_back({v, u});
+            }
+        }
+
+        directedGraph res(n, m, edjes);
+
+        return res;
+    }
 };
 
 int main(){
