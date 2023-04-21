@@ -50,6 +50,20 @@ struct undirectedGraph{
             dfs(nxt, visited);
         }
     }
+
+    //only for undirectedGraph
+    int countComponents(){
+        vector<bool> visited(n);
+
+        int res = 0;
+        for (int i = 0; i < n; ++i){
+            if (!visited[i]){
+                dfs(i, visited);
+            }
+        }
+
+        return res;
+    }
 };
 
 
