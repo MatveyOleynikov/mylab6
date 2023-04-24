@@ -10,9 +10,11 @@ using namespace std;
 #endif
 
 void printVector(const vector<int>& vec){
+    cout << "{";
     for (auto elem: vec){
         cout << elem << " ";
     }
+    cout << "}";
     cout << "\n";
 }
 
