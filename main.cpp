@@ -50,6 +50,10 @@ ostream& operator<<(ostream& o, const vector<T> & a)
     return o;
 }
 
+void nothing(){
+
+}
+
 struct directedGraph{
     int n;
     int m;
