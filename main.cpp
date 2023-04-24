@@ -18,9 +18,11 @@ using namespace std;
 template<typename T>
 ostream& operator<<(ostream& o, const vector<T> & a)
 {
+    cout << "{";
     for (size_t i = 0; i < a.size(); ++i){
         o << a[i] << " ";
     }
+    cout << "}";
     o << '\n';
     return o;
 }
