@@ -26,9 +26,10 @@ using namespace std;
 using ll = long long;
 using ld = long double;
 using pii = pair<int, int>;
-using vi = vector<long long>;
-using vi = vector<short>;
-using vvi = vector<vector<short>>;
+//both
+using vi = vector<int>;
+using ls = list<short>;
+using vvs = vector<vector<short>>;
 
 template<typename T>
 istream& operator>>(istream& o, vector<T> & a)
